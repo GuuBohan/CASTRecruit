@@ -1,8 +1,5 @@
 package com.cast.recruit.controller;
 
-import com.cast.recruit.model.User;
-import com.cast.recruit.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

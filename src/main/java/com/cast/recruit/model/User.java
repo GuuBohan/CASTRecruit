@@ -1,10 +1,12 @@
 package com.cast.recruit.model;
 
+
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 /**
@@ -16,17 +18,15 @@ import javax.validation.constraints.Size;
 public class User {
     @Id
     @NotNull
-    @Size(min = 9, max = 9)
-//    @Pattern(regex =)
+    @Pattern(regexp = "[B|Q|H]{1}1[5|6|7|8]\\d{6}")
     private String studentID;
     @NotNull
     private String studentName;
-//    @Size(min = 6, max = 20)
-//    private String password;
     @NotNull
     private String studentSex;
     @NotNull
-//    @Length(min = 11, max = 11)
+//    @Pattern(regexp = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\\\d{8}$")
+//    @Size(min = 11,max = 11)
     private Long phoneNumber;
     private String intention_1;
     private String intention_2;
@@ -36,7 +36,6 @@ public class User {
 
     public User(String studentID, String studentName, String studentSex, Long phoneNumber, String intention_1,String intention_2){
         this.studentID = studentID;
-//        this.password = password;
         this.studentName =studentName;
         this.studentSex =studentSex;
         this.phoneNumber = phoneNumber;
@@ -44,13 +43,6 @@ public class User {
         this.intention_2 = intention_2;
     }
 
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
 
     public String getStudentSex() {
         return studentSex;
@@ -91,14 +83,6 @@ public class User {
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
-
-//    public String getPassword() {
-//        return password;
-//    }
-//
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
 
     public Long getPhoneNumber() {
         return phoneNumber;

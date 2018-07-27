@@ -10,5 +10,5 @@ import java.io.Serializable;
  * On 2018/7/15
  */
 public interface UserRepository extends JpaRepository<User, String>{
-//    User findUserByStudentID(String studentID);
+    User findUserByStudentID(String studentID);
 }
